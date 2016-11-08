@@ -1,0 +1,13 @@
+{
+  "MENU": {
+
+  },
+  "ABOUT_US": {
+    "title": "About Us",
+    "image": "img/verandah_hotel.png",
+    "description": ""
+  },
+  "COPYRIGHT": {
+    "key": "&copy; Verandah Restaurant, Edinburgh"
+  }
+}

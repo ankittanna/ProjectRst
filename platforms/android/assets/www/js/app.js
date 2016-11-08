@@ -1,4 +1,10 @@
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+// allow DI for use in controllers, unit tests
+.constant('_', window._)
+// use in views, ng-repeat="x in _.range(3)"
+.run(function ($rootScope) {
+    $rootScope._ = window._;
+})
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -64,8 +70,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/about-us',
       views: {
         'menuContent': {
-          templateUrl: 'views/about-us.html',
-          controller: 'AboutUsCtrl'
+          templateUrl: 'views/about-us/about-us.html',
+          controller: 'AboutUsController',
+          controllerAs: 'vm'
         }
       }
   })
@@ -140,5 +147,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
 });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/about-us');
 });
