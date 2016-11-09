@@ -7,13 +7,14 @@ function KeysService($http) {
     var applicationKeys = {};
 
     applicationKeys = $http.get('keys/keys.json');
-
-    function test() {
-        console.log('Hiiiiiiiiiiiiiiii');
-    }
+/*
+    function getKey(feature) {
+        return _.filter(applicationKeys, function (value, key) {
+            return key === feature;
+        });
+    }*/
 
     return {
-        applicationKeys: applicationKeys,
-        test: test
+        applicationKeys: applicationKeys
     };
 }

@@ -7,5 +7,5 @@ function AboutUsController(KeysService) {
     var vm = this;
     vm.name = 'About Us';
 
-    KeysService.test();
+    var a = KeysService;
 }

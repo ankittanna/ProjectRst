@@ -1,10 +1,4 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
-// allow DI for use in controllers, unit tests
-.constant('_', window._)
-// use in views, ng-repeat="x in _.range(3)"
-.run(function ($rootScope) {
-    $rootScope._ = window._;
-})
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
