@@ -4,13 +4,11 @@ angular.module('starter.controllers')
 AboutUsController.$inject = ['KeysService', '_'];
 
 function AboutUsController(KeysService, _) {
-    var vm = this;
-    vm.name = 'About Us';
+    var vm = this,
+    feature = KeysService.getKey('ABOUT_US');
 
-    //var a = KeysService;
+    console.log("*****************"+ feature.title);
 
-    var a = ['1', '2', '3', '4'];
-    _.forEach(a, function(item) {
-        console.log('Itel ******** ' + item);
-    });
+    vm.name = feature.title;
+
 }

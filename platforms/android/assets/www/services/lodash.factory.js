@@ -3,7 +3,7 @@ angular.module('starter.services', [])
 
 LodashFactory.$inject = ['$window'];
 
-function KeysService($window) {
+function LodashFactory($window) {
     var _ = $window._;
     return _;
 }

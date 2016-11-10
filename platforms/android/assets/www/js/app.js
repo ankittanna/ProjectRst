@@ -14,6 +14,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       });
 })
+.run(function($http, $window) {
+    var applicationKeys = [];
+    $http.get('keys/keys.json')
+        .success(function(response) {
+            applicationKeys = _.map(response, function(value, key) {
+                return { key: key, value: value }
+            });
+
+            $window.applicationKeys = applicationKeys;
+        })
+        .error(function(error) {
+            console.log('error');
+
+            $window.applicationKeys = [];
+        });
+})
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('app', {
