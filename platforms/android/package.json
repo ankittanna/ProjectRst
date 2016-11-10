@@ -1,0 +1,43 @@
+{
+  "name": "projectrst",
+  "version": "1.0.0",
+  "description": "An app for restaurant",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankittanna/ProjectRst.git"
+  },
+  "keywords": [
+    "projectrst"
+  ],
+  "author": "Ankit Tanna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankittanna/ProjectRst/issues"
+  },
+  "homepage": "https://github.com/ankittanna/ProjectRst#readme",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-streamify": "1.0.2",
+    "gulp-jshint": "2.0.2",
+    "gulp-jscs": "4.0.0",
+    "autoprefixer": "6.5.3",
+    "gulp-complexity": "0.3.2",
+    "gulp-concat": "2.6.0",
+    "gulp-csscomb": "3.0.8",
+    "gulp-csso": "2.0.0",
+    "gulp-duration": "0.0.0",
+    "gulp-htmlmin": "3.0.0",
+    "gulp-less": "3.2.0",
+    "gulp-live-server": "0.0.30",
+    "gulp-minify": "0.0.14",
+    "gulp-uglify": "2.0.0",
+    "gulp-useref": "3.1.2",
+    "gulp-watch": "4.3.10",
+    "vinyl-source-stream": "1.1.0",
+    "watchify": "3.7.0"
+  }
+}
