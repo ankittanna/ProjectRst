@@ -1,11 +1,14 @@
 angular.module('starter.controllers')
 .controller('AboutUsController', AboutUsController);
 
-AboutUsController.$inject = ['KeysService'];
+AboutUsController.$inject = ['KeysService', '_'];
 
-function AboutUsController(KeysService) {
-    var vm = this;
-    vm.name = 'About Us';
+function AboutUsController(KeysService, _) {
+    var vm = this,
+    feature = KeysService.getKey('ABOUT_US');
 
-    KeysService.test();
+    console.log("*****************"+ feature.title);
+
+    vm.name = feature.title;
+
 }
