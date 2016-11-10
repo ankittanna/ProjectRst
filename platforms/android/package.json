@@ -39,5 +39,8 @@
     "gulp-watch": "4.3.10",
     "vinyl-source-stream": "1.1.0",
     "watchify": "3.7.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }
