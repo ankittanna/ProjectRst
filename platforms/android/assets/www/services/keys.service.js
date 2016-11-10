@@ -1,20 +1,19 @@
-angular.module('starter.services', [])
+angular.module('starter.services')
 .factory('KeysService', KeysService);
 
-KeysService.$inject = ['$http'];
+KeysService.$inject = ['$http', '_'];
 
-function KeysService($http) {
-    var applicationKeys = {};
+function KeysService($http, _) {
+    var applicationKeys = $http.get('keys/keys.json') || {};
 
-    applicationKeys = $http.get('keys/keys.json');
-/*
     function getKey(feature) {
         return _.filter(applicationKeys, function (value, key) {
             return key === feature;
         });
-    }*/
+    }
 
     return {
-        applicationKeys: applicationKeys
+        applicationKeys: applicationKeys,
+        getKey: getKey
     };
 }
