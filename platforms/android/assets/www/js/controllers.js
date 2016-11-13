@@ -1,6 +1,7 @@
+'use strict';
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function AppController($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -15,7 +16,7 @@ angular.module('starter.controllers', [])
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
-  }).then(function(modal) {
+  }).then(function ionicModalSuccess(modal) {
     $scope.modal = modal;
   });
 
