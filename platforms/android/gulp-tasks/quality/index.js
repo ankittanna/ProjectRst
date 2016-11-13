@@ -1,11 +1,12 @@
 'use strict';
 
-var html5Lint = require('gulp-html5-lint');
+var htmlhint = require('gulp-htmlhint');
 
 module.exports = function(gulp) {
 	gulp.task('lint-html', function() {
-		return gulp.src('assets/www/index.html')
-            .pipe(html5Lint({}));
+		gulp.src("./assets/**/*.html")
+            .pipe(htmlhint('.htmlhintrc'))
+            .pipe(htmlhint.failReporter({ suppress: false }));
 	});
 
 	gulp.task('lint-html-report', function() {

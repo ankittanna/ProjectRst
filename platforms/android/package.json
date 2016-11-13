@@ -29,6 +29,7 @@
     "gulp-duration": "0.0.0",
     "gulp-html-lint": "0.0.1",
     "gulp-html5-lint": "^1.1.0",
+    "gulp-htmlhint": "^0.3.1",
     "gulp-htmllint": "0.0.11",
     "gulp-htmlmin": "3.0.0",
     "gulp-jscs": "4.0.0",
