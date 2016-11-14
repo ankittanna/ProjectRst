@@ -1,14 +1,13 @@
+'use strict';
+
 angular.module('starter.controllers')
 .controller('AboutUsController', AboutUsController);
 
-AboutUsController.$inject = ['KeysService', '_'];
+AboutUsController.$inject = [ 'KeysService' ];
 
-function AboutUsController(KeysService, _) {
+function AboutUsController(KeysService) {
     var vm = this,
     feature = KeysService.getKey('ABOUT_US');
 
-    console.log("*****************"+ feature.title);
-
     vm.name = feature.title;
-
 }
