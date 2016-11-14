@@ -1,6 +1,9 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
-.run(function ($ionicPlatform) {
-    $ionicPlatform.ready(function() {
+/*eslint no-undef: "off"*/
+'use strict';
+
+angular.module('starter', [ 'ionic', 'starter.controllers', 'starter.services' ])
+.run(function IonicConfigRun($ionicPlatform) {
+    $ionicPlatform.ready(function ionicPlatformReady() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -14,23 +17,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       });
 })
-.run(function($http, $window) {
+.run(function LoadKeys($http, $window) {
     var applicationKeys = [];
+
     $http.get('keys/keys.json')
-        .success(function(response) {
-            applicationKeys = _.map(response, function(value, key) {
+        .success(function getKeysSuccess(response) {
+            applicationKeys = _.map(response, function mapKeyResponse(value, key) {
                 return { key: key, value: value }
             });
 
             $window.applicationKeys = applicationKeys;
         })
-        .error(function(error) {
-            console.log('error');
-
+        .error(function keysLoadErrorHandler(error) {
+            /*console.log('error ' + error);*/
             $window.applicationKeys = [];
+            $window.applicationError = error;
         });
 })
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function StarterConfig($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('app', {
     url: '/app',

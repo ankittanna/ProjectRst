@@ -1,3 +1,7 @@
+/*eslint no-undef: "off"*/
+/*eslint no-unused-vars: "off"*/
+'use strict';
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -16,18 +20,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-afterEach(function() {
-    document.getElementById('stage').innerHTML = '';
-});
 
 var helper = {
-    trigger: function(obj, name) {
-        var e = document.createEvent('Event');
-        e.initEvent(name, true, true);
-        obj.dispatchEvent(e);
+    trigger: function triggerHandler(obj, name) {
+        var element = document.createEvent('Event');
+
+        element.initEvent(name, true, true);
+        obj.dispatchEvent(element);
     },
-    getComputedStyle: function(querySelector, property) {
+    getComputedStyle: function getComputedStyle(querySelector, property) {
         var element = document.querySelector(querySelector);
+
         return window.getComputedStyle(element).getPropertyValue(property);
     }
 };
+
+afterEach(function afterEachHandler() {
+    document.getElementById('stage').innerHTML = '';
+});

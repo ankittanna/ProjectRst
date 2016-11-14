@@ -1,8 +1,6 @@
 'use strict';
 angular.module('starter.controllers', [])
-
 .controller('AppCtrl', function AppController($scope, $ionicModal, $timeout) {
-
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -21,28 +19,26 @@ angular.module('starter.controllers', [])
   });
 
   // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
+  $scope.closeLogin = function closeLogin() {
     $scope.modal.hide();
   };
 
   // Open the login modal
-  $scope.login = function() {
+  $scope.login = function login() {
     $scope.modal.show();
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
+  $scope.doLogin = function doLogin() {
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
+    $timeout(function timeoutFunction() {
       $scope.closeLogin();
     }, 1000);
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('PlaylistsCtrl', function PlaylistController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -53,7 +49,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('ReviewsCtrl', function($scope) {
+.controller('ReviewsCtrl', function ReviewsController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -64,7 +60,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('AboutUsCtrl', function($scope) {
+.controller('AboutUsCtrl', function AboutUsController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -75,7 +71,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('ContactUsCtrl', function($scope) {
+.controller('ContactUsCtrl', function ContactUsController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -86,7 +82,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('CommentsCtrl', function($scope) {
+.controller('CommentsCtrl', function CommentsController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -97,7 +93,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('AwardsCtrl', function($scope) {
+.controller('AwardsCtrl', function AwardsController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -108,7 +104,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PressCtrl', function($scope) {
+.controller('PressCtrl', function PressController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -119,7 +115,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('GalleryCtrl', function($scope) {
+.controller('GalleryCtrl', function GalleryController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -130,7 +126,7 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('HomeCtrl', function($scope) {
+.controller('HomeCtrl', function HomeController($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -141,5 +137,5 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('PlaylistCtrl', function PlaylistController() {
 });

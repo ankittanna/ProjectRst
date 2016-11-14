@@ -1,9 +1,12 @@
+'use strict';
+
 angular.module('starter.services', [])
 .factory('_', LodashFactory);
 
-LodashFactory.$inject = ['$window'];
+LodashFactory.$inject = [ '$window' ];
 
 function LodashFactory($window) {
     var _ = $window._;
+
     return _;
 }

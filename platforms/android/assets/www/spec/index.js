@@ -1,3 +1,8 @@
+/*eslint no-undef: "off"*/
+/*eslint func-names: "off"*/
+
+'use strict';
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -26,7 +31,7 @@ describe('app', function() {
             });
 
             waitsFor(function() {
-                return (app.onDeviceReady.calls.length > 0);
+                return app.onDeviceReady.calls.length > 0;
             }, 'onDeviceReady should be called once', 500);
 
             runs(function() {
@@ -45,22 +50,27 @@ describe('app', function() {
 
     describe('receivedEvent', function() {
         beforeEach(function() {
-            var el = document.getElementById('stage');
-            el.innerHTML = ['<div id="deviceready">',
+            var element = document.getElementById('stage');
+
+            element.innerHTML = [ '<div id="deviceready">',
                             '    <p class="event listening">Listening</p>',
                             '    <p class="event received">Received</p>',
-                            '</div>'].join('\n');
+                            '</div>' ].join('\n');
         });
 
         it('should hide the listening element', function() {
+            var displayStyle = {};
+
             app.receivedEvent('deviceready');
-            var displayStyle = helper.getComputedStyle('#deviceready .listening', 'display');
+            displayStyle = helper.getComputedStyle('#deviceready .listening', 'display');
             expect(displayStyle).toEqual('none');
         });
 
         it('should show the received element', function() {
+            var displayStyle = {};
+
             app.receivedEvent('deviceready');
-            var displayStyle = helper.getComputedStyle('#deviceready .received', 'display');
+            displayStyle = helper.getComputedStyle('#deviceready .received', 'display');
             expect(displayStyle).toEqual('block');
         });
     });
