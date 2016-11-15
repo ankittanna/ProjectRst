@@ -21,6 +21,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ describe('sample', function() {
+    it('should be true', function() {
+        var a = true;
+        expect(a).toBeTruthy();
+    })
+ })
+
 describe('app', function() {
     describe('initialize', function() {
         it('should bind deviceready', function() {

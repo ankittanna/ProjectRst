@@ -11,6 +11,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 
 csslint.addFormatter('csslint-stylish');
 
@@ -54,6 +56,26 @@ module.exports = function(gulp) {
         .pipe(eslint.failAfterError());
 	});
 
+	gulp.task('js-concat', ['js-main', 'js-vendor']);
+
+	gulp.task('js-main', function() {
+		gulp.src(['./assets/www/js/*.js', './assets/www/services/*.js', './assets/www/views/**/*.js'])
+            .pipe(uglify())
+            .pipe(sourcemaps.init())
+            .pipe(concat('main.js'))
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('dist/js'));
+	});
+
+	gulp.task('js-vendor', function() {
+        gulp.src(['./assets/www/lib/ionic/ionic.bundle.min.js', './assets/www/lib/lodash/lodash.js'])
+            .pipe(uglify())
+            .pipe(sourcemaps.init())
+            .pipe(concat('vendor.js'))
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('dist/lib'));
+    });
+
 	gulp.task('css-prefix', function() {
 		gulp.src(['./assets/www/css/*.css'])
             .pipe(autoprefixer({
@@ -70,10 +92,21 @@ module.exports = function(gulp) {
         .pipe(csslint.formatter('fail'));
     });
 
-    gulp.task('css-concat', function() {
-        gulp.src(['./assets/www/css/*.css'])
+    gulp.task('css-concat', ['css-concat-main', 'css-concat-vendor']);
+
+    gulp.task('css-concat-main', function() {
+        gulp.src(['./assets/www/css/*.css', '!./assets/www/css/font-awesome.min.css'])
             .pipe(sourcemaps.init())
             .pipe(concat('main.css'))
+            .pipe(cleanCSS({compatibility: 'ie8'}))
+            .pipe(sourcemaps.write('.'))
+            .pipe(gulp.dest('dist/css'));
+    });
+
+    gulp.task('css-concat-vendor', function() {
+        gulp.src(['./assets/www/css/font-awesome.min.css', './assets/www/lib/ionic/css/ionic.min.css'])
+            .pipe(sourcemaps.init())
+            .pipe(concat('vendor.css'))
             .pipe(cleanCSS({compatibility: 'ie8'}))
             .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('dist/css'));
