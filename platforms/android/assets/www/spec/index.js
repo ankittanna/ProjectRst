@@ -28,7 +28,7 @@
     })
  })
 
-describe('app', function() {
+/*describe('app', function() {
     describe('initialize', function() {
         it('should bind deviceready', function() {
             runs(function() {
@@ -81,4 +81,4 @@ describe('app', function() {
             expect(displayStyle).toEqual('block');
         });
     });
-});
+});*/

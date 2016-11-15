@@ -14,3 +14,4 @@ out
 /build
 /node_modules
 /dist
+/coverage
