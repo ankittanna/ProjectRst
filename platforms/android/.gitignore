@@ -13,3 +13,5 @@ out
 # Gradle builds
 /build
 /node_modules
+/dist
+/coverage

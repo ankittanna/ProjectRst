@@ -1,7 +1,11 @@
-/*eslint no-undef: "off"*/
-/*eslint no-unused-vars: "off"*/
+/*eslint no-undef: "off"*//*
+
+*/
+/*eslint no-unused-vars: "off"*//*
+
 'use strict';
 
+*/
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,7 +23,8 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */
+ *//*
+
 
 var helper = {
     trigger: function triggerHandler(obj, name) {
@@ -38,3 +43,4 @@ var helper = {
 afterEach(function afterEachHandler() {
     document.getElementById('stage').innerHTML = '';
 });
+*/
