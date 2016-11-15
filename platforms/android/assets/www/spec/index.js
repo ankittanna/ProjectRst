@@ -23,8 +23,9 @@
  */
  describe('sample', function() {
     it('should be true', function() {
-        var a = true;
-        expect(a).toBeTruthy();
+        var ankit = true;
+
+        expect(ankit).toBeTruthy();
     })
  })
 
