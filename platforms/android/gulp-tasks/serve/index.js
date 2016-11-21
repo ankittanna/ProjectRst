@@ -1,6 +1,8 @@
-module.exports = function (gulp) {
+'use strict';
 
-    gulp.task('foo-serve', function () {
-        console.log('bar');
+module.exports = function serveTasks(gulp) {
+
+    gulp.task('foo-serve', function fooServe() {
+
     });
 };

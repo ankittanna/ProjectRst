@@ -1,10 +1,12 @@
-module.exports = function (gulp) {
+/*eslint no-undef: "off"*/
+'use strict';
+
+module.exports = function testTasks(gulp) {
 
 	var Server = require('karma').Server;
-	var fs = require('fs');
 	var path = require("path")
 
-	gulp.task('test-js', function (done) {
+	gulp.task('test-js', function testJsTask(done) {
       new Server({
         configFile: path.join(__dirname, '../../', 'karma.conf.js'),
         singleRun: true,
