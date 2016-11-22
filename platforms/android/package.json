@@ -45,6 +45,7 @@
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmllint": "0.0.11",
     "gulp-htmlmin": "3.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-jscs": "4.0.0",
     "gulp-jscs-stylish": "^1.4.0",
     "gulp-jshint": "2.0.2",
@@ -53,6 +54,7 @@
     "gulp-less": "3.2.0",
     "gulp-live-server": "0.0.30",
     "gulp-minify": "0.0.14",
+    "gulp-print": "^2.0.1",
     "gulp-rimraf": "^0.2.1",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-streamify": "1.0.2",
@@ -73,7 +75,8 @@
     "path": "^0.12.7",
     "pump": "^1.0.1",
     "vinyl-source-stream": "1.1.0",
-    "watchify": "3.7.0"
+    "watchify": "3.7.0",
+    "yargs": "^6.4.0"
   },
   "dependencies": {
     "gulp": "^3.9.1"
